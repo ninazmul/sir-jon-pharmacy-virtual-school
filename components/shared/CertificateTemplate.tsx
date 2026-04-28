@@ -17,7 +17,6 @@ export default function CertificateTemplate({
   course,
   settings,
 }: CertificateTemplateProps) {
-  const themeColor = settings?.theme || "#0055CE";
 
   const modules = course?.modules || [];
 
@@ -64,8 +63,7 @@ export default function CertificateTemplate({
           Completion of instructor-led training on
         </p>
         <h3
-          className="text-[40px] font-bold uppercase truncate pb-[2mm]"
-          style={{ color: themeColor }}
+          className="text-[40px] font-bold uppercase truncate pb-[2mm] text-maroon"
         >
           {course?.title || "N/A"}
         </h3>

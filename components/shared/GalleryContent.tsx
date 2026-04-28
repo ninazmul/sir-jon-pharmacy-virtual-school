@@ -9,13 +9,10 @@ import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 export default function GalleryContent({
-  settings,
   photos,
 }: {
-  settings: ISettingSafe | null;
   photos: IGallery[];
 }) {
-  const themeColor = settings?.theme || "#7C0A02";
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);

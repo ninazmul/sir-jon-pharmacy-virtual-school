@@ -82,10 +82,14 @@ export const getSetting = async (): Promise<ISettingSafe | null> => {
 
     await connectToDatabase();
 
-    let setting = await Setting.findOne().lean<ISetting>();
+    let setting = (await Setting.findOne().lean()) as unknown as ISetting;
 
     if (!setting) {
-      setting = await Setting.create(DEFAULT_SETTING);
+      setting = (await Setting.findOneAndUpdate(
+        {},
+        { $setOnInsert: DEFAULT_SETTING },
+        { new: true, upsert: true, lean: true },
+      )) as unknown as ISetting;
     }
 
     cachedSetting = sanitizeSetting(setting);
@@ -94,7 +98,7 @@ export const getSetting = async (): Promise<ISettingSafe | null> => {
     return JSON.parse(JSON.stringify(cachedSetting));
   } catch (error) {
     handleError(error);
-    return null; // matches Promise<ISettingSafe | null>
+    return null;
   }
 };
 

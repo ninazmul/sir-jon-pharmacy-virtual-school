@@ -9,7 +9,6 @@ import { getUserEmailById } from "@/lib/actions/user.actions";
 import { ICourse } from "@/lib/database/models/course.model";
 import { redirect } from "next/navigation";
 import Link from "next/link";
-import { getSetting } from "@/lib/actions";
 
 function normalizeRegistration(r: SerializedRegistration) {
   const mapStr = (v: string | null) => (v == null ? undefined : v);
@@ -29,8 +28,6 @@ function normalizeRegistration(r: SerializedRegistration) {
 }
 
 const Page = async () => {
-  const settings = await getSetting();
-  const themeColor = settings?.theme || "#0055CE";
 
   const { sessionClaims } = await auth();
   const userId = sessionClaims?.userId as string;
@@ -69,8 +66,7 @@ const Page = async () => {
         {/* Page Title */}
         <div className="text-center mb-12 md:mb-16">
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight"
-            style={{ color: themeColor }}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-maroon" 
           >
             Your Enrollment Overview
           </h1>

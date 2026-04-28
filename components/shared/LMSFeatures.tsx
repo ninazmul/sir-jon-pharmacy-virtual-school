@@ -18,8 +18,6 @@ const ICONS: Record<string, JSX.Element> = {
 };
 
 function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
-  // Prefer site theme but keep consistent maroon/primary palette
-  const bgClass = setting?.theme ? "" : "bg-primary/5";
   const features = setting?.features?.items || [
     {
       title: "Structured Curriculum",
@@ -46,7 +44,7 @@ function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
   return (
     <section
       aria-label="Platform features"
-      className={`w-full py-12 md:py-20 px-6 md:px-12 ${bgClass}`}
+      className={`w-full py-12 md:py-20 px-6 md:px-12 bg-primary/5`}
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

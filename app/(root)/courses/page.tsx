@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
-import { getSetting } from "@/lib/actions";
 import Image from "next/image";
 import { CourseLink } from "@/components/shared/CourseLink";
 import { ICourseSafe } from "@/lib/database/models/course.model";
@@ -17,7 +16,6 @@ export default function CoursesPage() {
   const [selectedCategory, setSelectedCategory] =
     useState<string>("All Categories");
   const [courses, setCourses] = useState<ICourseSafe[]>([]);
-  const [themeColor, setThemeColor] = useState("#7C0A02"); // maroon fallback
   const [loading, setLoading] = useState(true);
 
   const categories = useMemo(
@@ -40,24 +38,6 @@ export default function CoursesPage() {
     ],
     [],
   );
-
-  // Load theme
-  useEffect(() => {
-    let mounted = true;
-    (async () => {
-      try {
-        const setting = await getSetting();
-        if (!mounted) return;
-        setThemeColor(setting?.theme || "#7C0A02");
-      } catch (err) {
-        console.error("Failed to load setting", err);
-      }
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, []);
-
   // Load courses
   useEffect(() => {
     let mounted = true;
@@ -84,14 +64,6 @@ export default function CoursesPage() {
       mounted = false;
     };
   }, [activeTab, selectedCategory]);
-
-  const formatPrice = (value: any) => {
-    const n = Number(value || 0);
-    return n.toLocaleString(undefined, {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 2,
-    });
-  };
 
   return (
     <main className="w-full py-12 md:py-20 px-4 sm:px-6 lg:px-12">
