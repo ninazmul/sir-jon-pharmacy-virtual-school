@@ -94,13 +94,7 @@ function Courses({ courses }: { courses?: ICourseSafe[] }) {
                   )}
 
                   {course.certification && (
-                    <span
-                      className="text-xs font-semibold px-2 py-1 rounded-full"
-                      style={{
-                        backgroundColor: `primary20`,
-                        color: `primary`,
-                      }}
-                    >
+                    <span className="text-xs font-semibold px-2 py-1 rounded-full text-primary bg-primary/20">
                       {course.certification}
                     </span>
                   )}

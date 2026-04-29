@@ -38,6 +38,7 @@ export default function CoursesPage() {
     ],
     [],
   );
+
   // Load courses
   useEffect(() => {
     let mounted = true;
@@ -92,7 +93,7 @@ export default function CoursesPage() {
               setSelectedCategory(e.target.value);
               setActiveTab("all");
             }}
-            className="w-full md:w-3/4 px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-opacity-60"
+            className="w-full md:w-3/4 px-4 py-2 rounded-xl border border-gray-200 bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-60"
             aria-label="Filter courses by category"
           >
             {categories.map((c) => (
@@ -116,10 +117,9 @@ export default function CoursesPage() {
                 }}
                 className={`px-4 py-2 rounded-xl font-semibold transition focus:outline-none focus-visible:ring-2 ${
                   active
-                    ? "text-white"
+                    ? "bg-primary text-white"
                     : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
-                style={active ? { backgroundColor: `primary` } : {}}
                 aria-pressed={active}
               >
                 {tab === "all" && "All Courses"}
@@ -216,13 +216,7 @@ export default function CoursesPage() {
                     )}
 
                     {course.certification && (
-                      <span
-                        className="text-xs font-semibold px-2 py-1 rounded-full"
-                        style={{
-                          backgroundColor: `primary20`,
-                          color: `primary`,
-                        }}
-                      >
+                      <span className="text-xs font-semibold px-2 py-1 rounded-full text-primary bg-primary/20">
                         {course.certification}
                       </span>
                     )}
