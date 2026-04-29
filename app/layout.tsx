@@ -18,9 +18,9 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title:
-    "Sir Jon Pharmacy Virtual School | NSDA & BTEB Authorized Assessment Institute",
+    "Sir Jon Pharmacy Virtual School | Canadian Authorized Assessment Institute",
   description:
-    "Sir Jon Pharmacy Virtual School is an NSDA & BTEB authorized assessment institute committed to providing high-quality technical education, skills development, and certification services.",
+    "Sir Jon Pharmacy Virtual School is an Canadian authorized assessment institute committed to providing high-quality technical education, skills development, and certification services.",
   keywords: [
     "Technical Training",
     "NSDA",
