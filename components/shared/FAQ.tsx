@@ -117,23 +117,6 @@ function FAQ({ setting }: { setting: ISettingSafe | null }) {
             })
           )}
         </div>
-
-        {/* CTA */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition"
-          >
-            Contact Support
-          </a>
-
-          <a
-            href="/help-center"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-primary text-white font-semibold hover:opacity-95 transition"
-          >
-            Visit Help Center
-          </a>
-        </div>
       </div>
     </section>
   );
