@@ -5,17 +5,9 @@ import { useMemo } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { GraduationCap, BookOpen, Globe, CheckCircle } from "lucide-react";
-import { ICourseSafe } from "@/lib/database/models/course.model";
-import ApplyModal from "./ApplyModal";
 import Link from "next/link";
 
-function Hero({
-  setting,
-  courses,
-}: {
-  setting: ISettingSafe | null;
-  courses?: ICourseSafe[];
-}) {
+function Hero({ setting }: { setting: ISettingSafe | null }) {
   const titleParts = useMemo(() => {
     return (
       setting?.hero?.title?.split(/[.,]/).filter(Boolean) || [
@@ -46,24 +38,26 @@ function Hero({
       {/* Black overlay for stronger contrast */}
       <div className="absolute inset-0 bg-black/60" />
 
-      {/* Brand gradient overlay (subtle, sits above black to tint with brand) */}
+      {/* Brand gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/10 mix-blend-overlay pointer-events-none" />
 
       {/* Centered content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 flex flex-col items-center text-center">
-        {/* Badge */}
+        {/* Badge with glassmorphism */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 text-primary font-semibold shadow-sm mb-6"
+          className="inline-flex items-center gap-3 px-4 py-2 rounded-full 
+                     bg-white/20 backdrop-blur-md border border-white/30 
+                     text-white font-semibold shadow-sm mb-6"
         >
           <GraduationCap size={18} />
           Welcome to our virtual school!
         </motion.div>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight mb-4 gap">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight mb-4">
           {titleParts.map((part, i) => (
             <motion.span
               key={i}
@@ -96,7 +90,7 @@ function Hero({
           }}
         />
 
-        {/* CTAs */}
+        {/* CTAs with glass effect */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -105,22 +99,30 @@ function Hero({
         >
           <Link
             href="/courses"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full border-2 border-white/30 text-white hover:bg-white/10 transition font-semibold"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 
+                       rounded-full border border-white/30 bg-white/10 backdrop-blur-sm 
+                       text-white hover:bg-white/20 transition font-semibold"
           >
             <BookOpen size={16} />
             Browse Courses
           </Link>
         </motion.div>
 
-        {/* Quick features / trust row */}
+        {/* Quick features / trust row with glass cards */}
         <motion.ul
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl"
         >
-          <li className="flex items-start gap-3 bg-white/6 rounded-lg p-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white">
+          <li
+            className="flex items-start gap-3 rounded-lg p-4 
+                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+          >
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+                            bg-white/20 backdrop-blur-sm text-white px-3"
+            >
               <CheckCircle size={18} />
             </div>
             <div className="text-left">
@@ -133,8 +135,14 @@ function Hero({
             </div>
           </li>
 
-          <li className="flex items-start gap-3 bg-white/6 rounded-lg p-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white">
+          <li
+            className="flex items-start gap-3 rounded-lg p-4 
+                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+          >
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+                            bg-white/20 backdrop-blur-sm text-white px-3"
+            >
               <Globe size={18} />
             </div>
             <div className="text-left">
@@ -147,8 +155,14 @@ function Hero({
             </div>
           </li>
 
-          <li className="flex items-start gap-3 bg-white/6 rounded-lg p-4">
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-white">
+          <li
+            className="flex items-start gap-3 rounded-lg p-4 
+                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
+          >
+            <div
+              className="flex items-center justify-center w-10 h-10 rounded-full 
+                            bg-white/20 backdrop-blur-sm text-white px-3"
+            >
               <GraduationCap size={18} />
             </div>
             <div className="text-left">

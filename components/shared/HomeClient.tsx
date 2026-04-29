@@ -19,7 +19,7 @@ export default function Home({
   return (
     <main>
       <Popup setting={setting} />
-      <Hero setting={setting} courses={courses} />
+      <Hero setting={setting} />
       <section id="courses">
         <CoursesContent courses={courses} />
       </section>
