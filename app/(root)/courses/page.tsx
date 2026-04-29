@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 type TabKey = "all" | "upcoming" | "ongoing" | "old";
 
 export default function CoursesPage() {
-  const [activeTab, setActiveTab] = useState<TabKey>("ongoing");
+  const [activeTab, setActiveTab] = useState<TabKey>("all");
   const [selectedCategory, setSelectedCategory] =
     useState<string>("All Categories");
   const [courses, setCourses] = useState<ICourseSafe[]>([]);
