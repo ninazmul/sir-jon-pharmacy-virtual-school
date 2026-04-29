@@ -1,20 +1,15 @@
 "use client";
 
 import { ISettingSafe } from "@/lib/database/models/setting.model";
-import {
-  FaBookOpen,
-  FaChalkboardTeacher,
-  FaCertificate,
-  FaUsers,
-} from "react-icons/fa";
+import { BookOpen, GraduationCap, Award, Users } from "lucide-react"; // ✅ Lucide icons
 import { motion } from "framer-motion";
 import { JSX } from "react";
 
 const ICONS: Record<string, JSX.Element> = {
-  FaBookOpen: <FaBookOpen className="w-8 h-8 text-white" />,
-  FaChalkboardTeacher: <FaChalkboardTeacher className="w-8 h-8 text-white" />,
-  FaCertificate: <FaCertificate className="w-8 h-8 text-white" />,
-  FaUsers: <FaUsers className="w-8 h-8 text-white" />,
+  BookOpen: <BookOpen className="w-8 h-8 text-white" />,
+  GraduationCap: <GraduationCap className="w-8 h-8 text-white" />,
+  Award: <Award className="w-8 h-8 text-white" />,
+  Users: <Users className="w-8 h-8 text-white" />,
 };
 
 function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
@@ -22,22 +17,22 @@ function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
     {
       title: "Structured Curriculum",
       description: "Clear learning paths and outcomes",
-      icon: "FaBookOpen",
+      icon: "BookOpen",
     },
     {
       title: "Expert Instructors",
       description: "Certified teachers and mentors",
-      icon: "FaChalkboardTeacher",
+      icon: "GraduationCap",
     },
     {
-      title: "Recognized Certificates",
-      description: "Provincial and industry-recognized credentials",
-      icon: "FaCertificate",
+      title: "Recognized Credentials",
+      description: "Provincial and industry-recognized certificates",
+      icon: "Award",
     },
     {
       title: "Student Community",
       description: "Peer groups, clubs and support",
-      icon: "FaUsers",
+      icon: "Users",
     },
   ];
 
@@ -93,7 +88,7 @@ function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
               aria-labelledby={`feature-${i}`}
             >
               <div className="flex items-center justify-center w-14 h-14 rounded-lg bg-white/20 border border-white/30">
-                {ICONS[item.icon || "FaBookOpen"]}
+                {ICONS[item.icon || "BookOpen"]}
               </div>
 
               <div className="flex-1">
