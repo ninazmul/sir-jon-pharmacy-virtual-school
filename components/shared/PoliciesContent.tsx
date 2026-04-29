@@ -83,7 +83,7 @@ export default function PoliciesContent({
           transition={{ duration: 0.45 }}
           className="text-center mb-8"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-maroon">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
             Legal Information
           </h1>
           <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -97,7 +97,7 @@ export default function PoliciesContent({
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-4">
               <div className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden">
-                <div className="px-4 py-3 bg-maroon text-white font-semibold">
+                <div className="px-4 py-3 bg-primary text-white font-semibold">
                   Quick Navigation
                 </div>
 
@@ -117,7 +117,7 @@ export default function PoliciesContent({
                         onClick={() => scrollTo(item.id)}
                         className={`w-full flex items-center justify-between gap-3 px-3 py-2 rounded-md text-sm transition ${
                           active
-                            ? "bg-maroon/10 font-semibold text-maroon"
+                            ? "bg-primary/10 font-semibold text-primary"
                             : "text-gray-700 dark:text-gray-300"
                         }`}
                         aria-current={active ? "true" : "false"}
@@ -125,13 +125,15 @@ export default function PoliciesContent({
                         <div className="flex items-center gap-3">
                           <Icon
                             size={16}
-                            className={active ? "text-maroon" : "text-gray-400"}
+                            className={
+                              active ? "text-primary" : "text-gray-400"
+                            }
                           />
                           <span>{item.label}</span>
                         </div>
 
                         {active ? (
-                          <ChevronDown size={16} className="text-maroon" />
+                          <ChevronDown size={16} className="text-primary" />
                         ) : (
                           <ChevronRight size={16} className="text-gray-400" />
                         )}
@@ -149,8 +151,8 @@ export default function PoliciesContent({
                 <div className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
                   {settings.email && (
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-md bg-maroon/10">
-                        <Mail size={14} className="text-maroon" />
+                      <div className="p-2 rounded-md bg-primary/10">
+                        <Mail size={14} className="text-primary" />
                       </div>
                       <div>
                         <div className="text-xs text-gray-500">Email</div>
@@ -163,8 +165,8 @@ export default function PoliciesContent({
 
                   {settings.phoneNumber && (
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-md bg-maroon/10">
-                        <Phone size={14} className="text-maroon" />
+                      <div className="p-2 rounded-md bg-primary/10">
+                        <Phone size={14} className="text-primary" />
                       </div>
                       <div>
                         <div className="text-xs text-gray-500">Phone</div>
@@ -177,8 +179,8 @@ export default function PoliciesContent({
 
                   {settings.address && (
                     <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-md bg-maroon/10">
-                        <MapPin size={14} className="text-maroon" />
+                      <div className="p-2 rounded-md bg-primary/10">
+                        <MapPin size={14} className="text-primary" />
                       </div>
                       <div>
                         <div className="text-xs text-gray-500">Address</div>
@@ -202,7 +204,7 @@ export default function PoliciesContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <File size={28} />
                   <div>
                     <h2 className="text-lg font-semibold">
@@ -234,7 +236,7 @@ export default function PoliciesContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <Shield size={28} />
                   <div>
                     <h2 className="text-lg font-semibold">Privacy Policy</h2>
@@ -262,7 +264,7 @@ export default function PoliciesContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <DollarSign size={28} />
                   <div>
                     <h2 className="text-lg font-semibold">
@@ -297,7 +299,7 @@ export default function PoliciesContent({
                     onClick={() => scrollTo(item.id)}
                     className={`px-3 py-2 rounded-md text-sm whitespace-nowrap transition ${
                       active
-                        ? "bg-maroon/10 text-maroon font-semibold"
+                        ? "bg-primary/10 text-primary font-semibold"
                         : "text-gray-700 dark:text-gray-300"
                     }`}
                     aria-pressed={active}

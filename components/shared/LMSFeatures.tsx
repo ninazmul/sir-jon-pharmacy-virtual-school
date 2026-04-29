@@ -44,7 +44,7 @@ function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
   return (
     <section
       aria-label="Platform features"
-      className="w-full py-12 md:py-20 px-6 md:px-12 bg-maroon text-white"
+      className="w-full py-12 md:py-20 px-6 md:px-12 bg-primary text-white"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -123,7 +123,7 @@ function LMSFeatures({ setting }: { setting: ISettingSafe | null }) {
 
           <a
             href="/courses"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-maroon font-semibold hover:opacity-95 transition"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-white text-primary font-semibold hover:opacity-95 transition"
           >
             Browse Courses
           </a>

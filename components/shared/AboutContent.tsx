@@ -95,7 +95,7 @@ export default function AboutContent({
           transition={{ duration: 0.45 }}
           className="text-center mb-10"
         >
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-maroon">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
             About Us
           </h1>
           <p className="mt-3 max-w-3xl mx-auto text-gray-600 dark:text-gray-300">
@@ -109,7 +109,7 @@ export default function AboutContent({
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-4">
               <div className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden">
-                <div className="px-4 py-3 bg-maroon text-white font-semibold">
+                <div className="px-4 py-3 bg-primary text-white font-semibold">
                   Quick Navigation
                 </div>
 
@@ -128,7 +128,7 @@ export default function AboutContent({
                         onClick={() => scrollTo(item.id)}
                         className={`w-full flex items-center justify-between gap-3 px-3 py-2 rounded-md text-sm transition ${
                           active
-                            ? "bg-maroon/10 font-semibold text-maroon"
+                            ? "bg-primary/10 font-semibold text-primary"
                             : "text-gray-700 dark:text-gray-300"
                         }`}
                         aria-current={active ? "true" : "false"}
@@ -136,13 +136,15 @@ export default function AboutContent({
                         <div className="flex items-center gap-3">
                           <Icon
                             size={16}
-                            className={active ? "text-maroon" : "text-gray-400"}
+                            className={
+                              active ? "text-primary" : "text-gray-400"
+                            }
                           />
                           <span>{item.label}</span>
                         </div>
 
                         {active ? (
-                          <ChevronDown size={16} className="text-maroon" />
+                          <ChevronDown size={16} className="text-primary" />
                         ) : (
                           <ChevronRight size={16} className="text-gray-400" />
                         )}
@@ -161,7 +163,7 @@ export default function AboutContent({
                   {settings?.phoneNumber && (
                     <a
                       href={`tel:${settings.phoneNumber}`}
-                      className="flex items-center gap-2 hover:text-maroon"
+                      className="flex items-center gap-2 hover:text-primary"
                     >
                       <Phone size={16} /> <span>{settings.phoneNumber}</span>
                     </a>
@@ -169,7 +171,7 @@ export default function AboutContent({
                   {settings?.email && (
                     <a
                       href={`mailto:${settings.email}`}
-                      className="flex items-center gap-2 hover:text-maroon"
+                      className="flex items-center gap-2 hover:text-primary"
                     >
                       <Mail size={16} /> <span>{settings.email}</span>
                     </a>
@@ -195,7 +197,7 @@ export default function AboutContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <Info size={28} />
                   <div>
                     <h2 className="text-xl font-semibold">About</h2>
@@ -225,7 +227,7 @@ export default function AboutContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <Phone size={28} />
                   <div>
                     <h2 className="text-xl font-semibold">Contact</h2>
@@ -236,7 +238,7 @@ export default function AboutContent({
                 <div className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="flex items-start gap-3">
-                      <Phone size={20} className="text-maroon" />
+                      <Phone size={20} className="text-primary" />
                       <div>
                         <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
                           Phone
@@ -248,7 +250,7 @@ export default function AboutContent({
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <Mail size={20} className="text-maroon" />
+                      <Mail size={20} className="text-primary" />
                       <div>
                         <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
                           Email
@@ -260,7 +262,7 @@ export default function AboutContent({
                     </div>
 
                     <div className="flex items-start gap-3">
-                      <MapPin size={20} className="text-maroon" />
+                      <MapPin size={20} className="text-primary" />
                       <div>
                         <div className="text-sm font-semibold text-gray-900 dark:text-gray-100">
                           Address
@@ -288,7 +290,7 @@ export default function AboutContent({
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-800 border rounded-2xl shadow-sm overflow-hidden"
               >
-                <div className="flex items-center gap-3 p-4 bg-maroon text-white rounded-t-2xl">
+                <div className="flex items-center gap-3 p-4 bg-primary text-white rounded-t-2xl">
                   <Globe size={28} />
                   <div>
                     <h2 className="text-xl font-semibold">Follow Us</h2>

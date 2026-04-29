@@ -54,9 +54,9 @@ const Footer = () => {
               width={150}
               height={150}
               priority
-              className="mx-auto md:mx-0 rounded-md border border-maroon"
+              className="mx-auto md:mx-0 rounded-md border border-primary"
             />
-            <h2 className="text-xl font-bold text-maroon">{setting?.name}</h2>
+            <h2 className="text-xl font-bold text-primary">{setting?.name}</h2>
             {setting?.tagline && (
               <p className="text-gray-600 italic">{setting.tagline}</p>
             )}
@@ -67,7 +67,7 @@ const Footer = () => {
                   href={setting.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-maroon text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
+                  className="bg-primary text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
                 >
                   <FaFacebookF size={18} />
                 </a>
@@ -77,7 +77,7 @@ const Footer = () => {
                   href={setting.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-maroon text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
+                  className="bg-primary text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
                 >
                   <FaInstagram size={18} />
                 </a>
@@ -87,7 +87,7 @@ const Footer = () => {
                   href={setting.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-maroon text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
+                  className="bg-primary text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
                 >
                   <FaTwitter size={18} />
                 </a>
@@ -97,7 +97,7 @@ const Footer = () => {
                   href={setting.facebookGroup}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-maroon text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
+                  className="bg-primary text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
                 >
                   <FaUsers size={18} />
                 </a>
@@ -107,7 +107,7 @@ const Footer = () => {
                   href={setting.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-maroon text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
+                  className="bg-primary text-white rounded-full p-2 flex items-center justify-center hover:bg-primary transition"
                 >
                   <FaYoutube size={18} />
                 </a>
@@ -118,7 +118,7 @@ const Footer = () => {
           {/* Contact + Links */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:justify-items-center w-full px-12">
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-maroon">Contacts</h3>
+              <h3 className="text-lg font-semibold text-primary">Contacts</h3>
               {setting?.phoneNumber && (
                 <div className="flex items-start gap-2 text-gray-700">
                   <Phone size={16} /> <span>{setting.phoneNumber}</span>
@@ -137,13 +137,13 @@ const Footer = () => {
             </div>
 
             <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-maroon">Others</h3>
+              <h3 className="text-lg font-semibold text-primary">Others</h3>
               <div className="grid grid-cols-1 text-gray-700">
                 {links.map((link, idx) => (
                   <Link
                     href={link.route}
                     key={idx}
-                    className="hover:text-maroon transition"
+                    className="hover:text-primary transition"
                   >
                     {link.label}
                   </Link>
@@ -159,7 +159,7 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="bg-maroon px-6 md:px-10 py-4"
+        className="bg-primary px-6 md:px-10 py-4"
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-white/80 text-center md:text-left">
           <p>

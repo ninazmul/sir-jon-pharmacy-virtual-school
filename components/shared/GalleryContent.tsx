@@ -8,11 +8,7 @@ import { IGallery } from "@/lib/database/models/gallery.model";
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
-export default function GalleryContent({
-  photos,
-}: {
-  photos: IGallery[];
-}) {
+export default function GalleryContent({ photos }: { photos: IGallery[] }) {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const closeBtnRef = useRef<HTMLButtonElement | null>(null);
@@ -63,9 +59,7 @@ export default function GalleryContent({
           transition={{ duration: 0.45 }}
           className="text-center mb-10"
         >
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-maroon"
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary">
             Gallery
           </h1>
           <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
@@ -102,7 +96,7 @@ export default function GalleryContent({
                   onClick={() => openModal(index)}
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.995 }}
-                  className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon/40"
+                  className="relative w-full aspect-[4/3] rounded-md overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   aria-label={`Open image ${image.title || index + 1}`}
                 >
                   <Image
@@ -207,7 +201,7 @@ export default function GalleryContent({
                           onClick={() => setCurrentIndex(i)}
                           className={`flex-shrink-0 w-28 h-16 overflow-hidden border ${
                             i === currentIndex
-                              ? "ring-2 ring-maroon/40 border-maroon"
+                              ? "ring-2 ring-primary/40 border-primary"
                               : "border-gray-200 dark:border-gray-700"
                           } focus:outline-none`}
                           aria-label={`View thumbnail ${i + 1}`}

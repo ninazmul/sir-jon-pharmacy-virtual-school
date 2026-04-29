@@ -145,7 +145,7 @@ export default function Popup({ setting }: { setting: ISettingSafe | null }) {
         <div className="h-1 w-full bg-white/20">
           <div
             ref={progressRef}
-            className="h-full bg-maroon"
+            className="h-full bg-primary"
             style={{
               width: "100%",
               transition: "width 10s linear",
@@ -158,8 +158,8 @@ export default function Popup({ setting }: { setting: ISettingSafe | null }) {
 
       <style jsx>{`
         /* Kick off the progress animation on mount */
-        :global(.bg-maroon) {
-          /* keep tailwind maroon class */
+        :global(.bg-primary) {
+          /* keep tailwind primary class */
         }
         /* When component mounts, animate progressRef to 0 */
         /* We use a small script to trigger the animation after render */

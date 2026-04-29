@@ -47,7 +47,7 @@ function Hero({
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Brand gradient overlay (subtle, sits above black to tint with brand) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-maroon/30 via-maroon/20 to-primary/10 mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/30 via-primary/20 to-primary/10 mix-blend-overlay pointer-events-none" />
 
       {/* Centered content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 flex flex-col items-center text-center">
@@ -56,7 +56,7 @@ function Hero({
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 text-maroon font-semibold shadow-sm mb-6"
+          className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/90 text-primary font-semibold shadow-sm mb-6"
         >
           <GraduationCap size={18} />
           Welcome to our virtual school!
@@ -73,7 +73,7 @@ function Hero({
               transition={{ delay: 0.12 * i }}
             >
               {i === 1 ? (
-                <span className="text-maroon px-2 rounded-sm">
+                <span className="text-primary px-2 rounded-sm">
                   {part.trim()}
                 </span>
               ) : (

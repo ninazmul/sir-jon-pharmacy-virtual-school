@@ -17,7 +17,6 @@ export default function CertificateTemplate({
   course,
   settings,
 }: CertificateTemplateProps) {
-
   const modules = course?.modules || [];
 
   return (
@@ -62,9 +61,7 @@ export default function CertificateTemplate({
         <p className="uppercase text-[18px] font-sans">
           Completion of instructor-led training on
         </p>
-        <h3
-          className="text-[40px] font-bold uppercase truncate pb-[2mm] text-maroon"
-        >
+        <h3 className="text-[40px] font-bold uppercase truncate pb-[2mm] text-primary">
           {course?.title || "N/A"}
         </h3>
       </div>

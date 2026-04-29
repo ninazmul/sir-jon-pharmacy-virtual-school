@@ -44,8 +44,8 @@ const NavItems = ({ onItemSelected }: NavItemsProps) => {
                 block w-full lg:w-auto px-4 py-2 rounded transition-colors
                 ${
                   isActive
-                    ? "bg-maroon text-white lg:bg-transparent lg:text-white border-b-2 font-semibold"
-                    : "text-maroon lg:text-white hover:border-b-2 hover:bg-maroon/10"
+                    ? "bg-primary text-white lg:bg-transparent lg:text-white border-b-2 font-semibold"
+                    : "text-primary lg:text-white hover:border-b-2 hover:bg-primary/10"
                 }
               `}
             >

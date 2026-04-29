@@ -22,21 +22,8 @@ module.exports = withUt({
     extend: {
       colors: {
         primary: {
-          50: "#e5f0ff", // very light navy
-          100: "#ccdeff",
-          200: "#99beff",
-          300: "#669eff",
-          400: "#337dff",
-          500: "#00467F", // CVS Navy Base
-          600: "#003a6b", 
-          700: "#002e56",
-          800: "#002342",
-          900: "#00182e",
-          DEFAULT: "#00467F",
+          DEFAULT: "#A51C30", // primary as the primary brand color
           foreground: "#FFFFFF",
-        },
-        maroon: {
-          DEFAULT: "#A51C30",
         },
         cvsGreen: {
           DEFAULT: "#6BBF73",
@@ -99,23 +86,14 @@ module.exports = withUt({
         sans: ["var(--font-inter)", "sans-serif"],
         serif: ["var(--font-dm-serif)", "serif"],
       },
-      backgroundImage: {},
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

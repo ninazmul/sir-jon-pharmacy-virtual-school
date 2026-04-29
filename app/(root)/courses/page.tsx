@@ -69,7 +69,7 @@ export default function CoursesPage() {
     <main className="w-full py-12 md:py-20 px-4 sm:px-6 lg:px-12">
       {/* Page header */}
       <div className="max-w-5xl mx-auto text-center mb-10">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-maroon">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
           Explore Our Courses
         </h1>
         <p className="mt-3 text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
@@ -119,7 +119,7 @@ export default function CoursesPage() {
                     ? "text-white"
                     : "bg-white text-gray-700 hover:bg-gray-100"
                 }`}
-                style={active ? { backgroundColor: `maroon` } : {}}
+                style={active ? { backgroundColor: `primary` } : {}}
                 aria-pressed={active}
               >
                 {tab === "all" && "All Courses"}
@@ -162,7 +162,7 @@ export default function CoursesPage() {
             </p>
             <Link
               href="/contact"
-              className="mt-6 inline-block px-5 py-3 rounded-full border-2 border-maroon text-maroon font-semibold hover:bg-maroon hover:text-white transition"
+              className="mt-6 inline-block px-5 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary hover:text-white transition"
             >
               Contact Support
             </Link>
@@ -219,8 +219,8 @@ export default function CoursesPage() {
                       <span
                         className="text-xs font-semibold px-2 py-1 rounded-full"
                         style={{
-                          backgroundColor: `maroon20`,
-                          color: `maroon`,
+                          backgroundColor: `primary20`,
+                          color: `primary`,
                         }}
                       >
                         {course.certification}

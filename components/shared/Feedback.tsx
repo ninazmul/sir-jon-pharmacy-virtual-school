@@ -33,11 +33,11 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center text-center gap-4"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-maroon/10 text-maroon border border-maroon/20 shadow-sm">
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20 shadow-sm">
             {badge}
           </span>
 
-          <h2 className="text-2xl md:text-4xl font-extrabold text-maroon">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-primary">
             {title}
           </h2>
 
@@ -55,21 +55,21 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
           className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl mx-auto"
         >
           <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-sm">
-            <p className="text-2xl md:text-3xl font-bold text-maroon">
+            <p className="text-2xl md:text-3xl font-bold text-primary">
               {stats.totalEnrollment}
             </p>
             <p className="text-sm text-gray-500 mt-1">Total Enrollments</p>
           </div>
 
           <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-sm">
-            <p className="text-2xl md:text-3xl font-bold text-maroon">
+            <p className="text-2xl md:text-3xl font-bold text-primary">
               {stats.successRate}%
             </p>
             <p className="text-sm text-gray-500 mt-1">Student Success Rate</p>
           </div>
 
           <div className="flex flex-col items-center bg-white rounded-2xl p-6 shadow-sm">
-            <p className="text-2xl md:text-3xl font-bold text-maroon">
+            <p className="text-2xl md:text-3xl font-bold text-primary">
               {stats.experts}
             </p>
             <p className="text-sm text-gray-500 mt-1">Industry Experts</p>
@@ -93,7 +93,7 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
                   transition={{ duration: 0.35 }}
                   className="bg-white rounded-2xl p-6 shadow-sm flex flex-col items-center text-center gap-4"
                 >
-                  <div className="w-14 h-14 rounded-full bg-maroon/90 flex items-center justify-center text-white text-xl font-bold">
+                  <div className="w-14 h-14 rounded-full bg-primary/90 flex items-center justify-center text-white text-xl font-bold">
                     A
                   </div>
                   <p className="font-semibold text-gray-900">Student Name</p>
@@ -132,7 +132,7 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
                         className="rounded-full object-cover w-16 h-16"
                       />
                     ) : (
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white bg-maroon">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold text-white bg-primary">
                         {firstLetter}
                       </div>
                     )}
@@ -172,14 +172,14 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full border-2 border-maroon text-maroon font-semibold hover:bg-maroon/10 transition"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition"
           >
             Contact Us to Share Your Story
           </Link>
 
           <Link
             href="/courses"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-maroon text-white font-semibold hover:opacity-95 transition"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-primary text-white font-semibold hover:opacity-95 transition"
           >
             Browse Courses
           </Link>

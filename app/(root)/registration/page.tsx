@@ -28,7 +28,6 @@ function normalizeRegistration(r: SerializedRegistration) {
 }
 
 const Page = async () => {
-
   const { sessionClaims } = await auth();
   const userId = sessionClaims?.userId as string;
   const email = await getUserEmailById(userId);
@@ -65,9 +64,7 @@ const Page = async () => {
       <div className="wrapper">
         {/* Page Title */}
         <div className="text-center mb-12 md:mb-16">
-          <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-maroon" 
-          >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-primary">
             Your Enrollment Overview
           </h1>
 

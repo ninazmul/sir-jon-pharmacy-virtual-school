@@ -29,13 +29,13 @@ function FAQ({ setting }: { setting: ISettingSafe | null }) {
         {/* Header */}
         <div className="text-center mb-8">
           {setting?.faqs?.badge && (
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-maroon/10 text-maroon border border-maroon/20 shadow-sm">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-primary/10 text-primary border border-primary/20 shadow-sm">
               {setting.faqs.badge}
             </span>
           )}
 
           {setting?.faqs?.title && (
-            <h2 className="mt-4 text-2xl md:text-4xl font-extrabold text-maroon">
+            <h2 className="mt-4 text-2xl md:text-4xl font-extrabold text-primary">
               {setting.faqs.title}
             </h2>
           )}
@@ -73,7 +73,7 @@ function FAQ({ setting }: { setting: ISettingSafe | null }) {
                     aria-controls={contentId}
                     aria-expanded={isOpen}
                     onClick={() => toggle(index)}
-                    className="w-full flex items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-maroon/40"
+                    className="w-full flex items-center justify-between gap-4 p-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                   >
                     <span className="flex-1 text-left">
                       <span className="block text-base md:text-lg font-semibold text-gray-900">
@@ -82,7 +82,7 @@ function FAQ({ setting }: { setting: ISettingSafe | null }) {
                     </span>
 
                     <ChevronDown
-                      className={`w-5 h-5 text-maroon transition-transform duration-300 ${
+                      className={`w-5 h-5 text-primary transition-transform duration-300 ${
                         isOpen ? "rotate-180" : "rotate-0"
                       }`}
                       aria-hidden
@@ -122,14 +122,14 @@ function FAQ({ setting }: { setting: ISettingSafe | null }) {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
             href="/contact"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full border-2 border-maroon text-maroon font-semibold hover:bg-maroon/10 transition"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full border-2 border-primary text-primary font-semibold hover:bg-primary/10 transition"
           >
             Contact Support
           </a>
 
           <a
             href="/help-center"
-            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-maroon text-white font-semibold hover:opacity-95 transition"
+            className="inline-flex items-center justify-center px-5 py-3 rounded-full bg-primary text-white font-semibold hover:opacity-95 transition"
           >
             Visit Help Center
           </a>

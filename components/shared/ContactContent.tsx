@@ -74,7 +74,7 @@ export default function ContactContent({
           transition={{ duration: 0.45 }}
           className="text-center mb-10"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-maroon">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary">
             Contact Us
           </h1>
           <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
@@ -92,15 +92,15 @@ export default function ContactContent({
             className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg border"
             style={{ borderColor: "rgba(124,10,2,0.12)" }}
           >
-            <h2 className="text-2xl font-semibold mb-4 text-maroon">
+            <h2 className="text-2xl font-semibold mb-4 text-primary">
               Contact Information
             </h2>
 
             <div className="space-y-6 text-gray-700 dark:text-gray-300">
               {settings?.email && (
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-maroon/10 flex-shrink-0">
-                    <Mail size={20} className="text-maroon" />
+                  <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Mail size={20} className="text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
@@ -116,8 +116,8 @@ export default function ContactContent({
 
               {settings?.phoneNumber && (
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-maroon/10 flex-shrink-0">
-                    <Phone size={20} className="text-maroon" />
+                  <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <Phone size={20} className="text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone</p>
@@ -133,8 +133,8 @@ export default function ContactContent({
 
               {settings?.address && (
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-maroon/10 flex-shrink-0">
-                    <MapPin size={20} className="text-maroon" />
+                  <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
+                    <MapPin size={20} className="text-primary" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Address</p>
@@ -145,7 +145,7 @@ export default function ContactContent({
             </div>
 
             <div className="mt-8">
-              <h3 className="text-lg font-semibold mb-3 text-maroon">
+              <h3 className="text-lg font-semibold mb-3 text-primary">
                 Follow Us
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -155,9 +155,9 @@ export default function ContactContent({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
-                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-maroon/10"
+                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-primary/10"
                   >
-                    <Facebook size={16} className="text-maroon" />
+                    <Facebook size={16} className="text-primary" />
                   </a>
                 )}
                 {settings?.instagram && (
@@ -166,9 +166,9 @@ export default function ContactContent({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
-                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-maroon/10"
+                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-primary/10"
                   >
-                    <Instagram size={16} className="text-maroon" />
+                    <Instagram size={16} className="text-primary" />
                   </a>
                 )}
                 {settings?.twitter && (
@@ -177,9 +177,9 @@ export default function ContactContent({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Twitter"
-                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-maroon/10"
+                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-primary/10"
                   >
-                    <Twitter size={16} className="text-maroon" />
+                    <Twitter size={16} className="text-primary" />
                   </a>
                 )}
                 {settings?.youtube && (
@@ -188,9 +188,9 @@ export default function ContactContent({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="YouTube"
-                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-maroon/10"
+                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-primary/10"
                   >
-                    <Youtube size={16} className="text-maroon" />
+                    <Youtube size={16} className="text-primary" />
                   </a>
                 )}
                 {settings?.facebookGroup && (
@@ -199,9 +199,9 @@ export default function ContactContent({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Community"
-                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-maroon/10"
+                    className="p-3 rounded-full shadow-sm hover:scale-105 transition w-10 h-10 flex items-center justify-center bg-primary/10"
                   >
-                    <Users size={16} className="text-maroon" />
+                    <Users size={16} className="text-primary" />
                   </a>
                 )}
               </div>
@@ -214,11 +214,11 @@ export default function ContactContent({
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="bg-white dark:bg-gray-800 rounded-xl p-6 sm:p-8 md:p-10 shadow-lg border space-y-6"
-            style={{ borderColor: `maroon/40` }}
+            style={{ borderColor: `primary/40` }}
           >
             <h2
               className="text-2xl sm:text-2xl font-bold"
-              style={{ color: `maroon` }}
+              style={{ color: `primary` }}
             >
               Send a Message
             </h2>
@@ -238,8 +238,8 @@ export default function ContactContent({
                 style={
                   focused === "name"
                     ? {
-                        boxShadow: `0 0 0 4px maroon22`,
-                        borderColor: `maroon`,
+                        boxShadow: `0 0 0 4px primary22`,
+                        borderColor: `primary`,
                       }
                     : {}
                 }
@@ -260,8 +260,8 @@ export default function ContactContent({
                 style={
                   focused === "email"
                     ? {
-                        boxShadow: `0 0 0 4px maroon22`,
-                        borderColor: `maroon`,
+                        boxShadow: `0 0 0 4px primary22`,
+                        borderColor: `primary`,
                       }
                     : {}
                 }
@@ -282,8 +282,8 @@ export default function ContactContent({
                 style={
                   focused === "message"
                     ? {
-                        boxShadow: `0 0 0 4px maroon22`,
-                        borderColor: `maroon`,
+                        boxShadow: `0 0 0 4px primary22`,
+                        borderColor: `primary`,
                       }
                     : {}
                 }
@@ -299,7 +299,7 @@ export default function ContactContent({
                   ? "opacity-70 cursor-not-allowed"
                   : "hover:scale-[1.02] hover:shadow-lg"
               }`}
-              style={{ backgroundColor: `maroon` }}
+              style={{ backgroundColor: `primary` }}
               aria-disabled={loading}
             >
               {loading ? "Sending..." : "Send Message"}

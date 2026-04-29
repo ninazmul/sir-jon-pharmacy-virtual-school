@@ -16,14 +16,10 @@ import {
   LayoutDashboard,
   GraduationCap,
   ClipboardList,
-  Megaphone,
-  Award,
+  ClipboardCheck,
   ImageIcon,
-  UserPlus,
   ShieldCheck,
   Settings,
-  MessageCircle,
-  ClipboardCheck,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -40,31 +36,31 @@ const sidebarItems = [
   {
     title: "Courses",
     url: "/dashboard/courses",
-    icon: GraduationCap, // clearer than BookOpen
+    icon: GraduationCap,
     roles: ["admin", "moderator"],
   },
   {
     title: "Registrations",
     url: "/dashboard/registrations",
-    icon: ClipboardList, // better for tracking entries
+    icon: ClipboardList,
     roles: ["admin", "moderator"],
   },
   {
-    title: "Quick Registration", // updated to reflect quick course registration
+    title: "Quick Registration",
     url: "/dashboard/applies",
-    icon: ClipboardCheck, // indicates user/application intent
+    icon: ClipboardCheck,
     roles: ["admin", "moderator"],
   },
   {
     title: "Gallery",
     url: "/dashboard/gallery",
-    icon: ImageIcon, // cleaner & modern
+    icon: ImageIcon,
     roles: ["admin"],
   },
   {
     title: "Admins",
     url: "/dashboard/admins",
-    icon: ShieldCheck, // authority + verified
+    icon: ShieldCheck,
     roles: ["admin"],
   },
   {
@@ -90,24 +86,33 @@ const AdminSidebar = ({ role }: { role?: string }) => {
 
   return (
     <Sidebar
-      className="text-primary font-semibold font-serif"
+      className="bg-white text-primary font-semibold shadow-md"
       collapsible="icon"
     >
       <SidebarContent>
         <SidebarGroup className="space-y-4">
+          {/* Logo + Name like Header */}
           <SidebarGroupLabel>
-            <div className="relative w-full h-10 rounded-md overflow-hidden bg-primary">
-              <Link href={"/"}>
+            <Link
+              href="/"
+              className="flex items-center gap-3 px-4 py-3 border-b border-gray-200"
+            >
+              <div className="relative w-10 h-10 rounded-md overflow-hidden">
                 <Image
                   src={settings?.logo || "/assets/images/logo.png"}
-                  height={100}
-                  width={200}
-                  className="object-contain rounded-md"
+                  fill
+                  className="object-contain"
                   alt={settings?.name || "Logo"}
+                  priority
                 />
-              </Link>
-            </div>
+              </div>
+              <span className="text-lg font-bold text-primary">
+                {"SJPV School"}
+              </span>
+            </Link>
           </SidebarGroupLabel>
+
+          {/* Menu */}
           <SidebarGroupContent>
             <SidebarMenu className="space-y-1">
               {sidebarItems
@@ -134,8 +139,10 @@ const AdminSidebar = ({ role }: { role?: string }) => {
                       <SidebarMenuButton asChild>
                         <Link
                           href={item.url}
-                          className={`flex items-center space-x-2 px-4 py-2 rounded-md ${
-                            isActive ? "bg-primary text-white" : ""
+                          className={`flex items-center space-x-2 px-4 py-2 rounded-md transition ${
+                            isActive
+                              ? "bg-primary text-white shadow-sm"
+                              : "hover:bg-primary/10 hover:text-primary"
                           }`}
                         >
                           <item.icon className="w-5 h-5" />

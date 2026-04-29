@@ -35,10 +35,10 @@ const MobileNav = () => {
         {/* Drawer Content */}
         <SheetContent
           side="left"
-          className="flex flex-col gap-8 bg-white text-maroon w-11/12 shadow-lg"
+          className="flex flex-col gap-8 bg-white text-primary w-11/12 shadow-lg"
         >
           {/* Logo */}
-          <div className="flex items-center justify-center py-4 border-b border-maroon/20">
+          <div className="flex items-center justify-center py-4 border-b border-primary/20">
             <div className="relative w-28 h-12">
               <Image
                 src={settings?.logo || "/assets/images/logo.png"}
@@ -55,7 +55,7 @@ const MobileNav = () => {
           </div>
 
           {/* Footer */}
-          <div className="mt-auto px-4 py-6 text-center text-sm text-maroon/70 border-t border-maroon/20">
+          <div className="mt-auto px-4 py-6 text-center text-sm text-primary/70 border-t border-primary/20">
             © {new Date().getFullYear()} {settings?.name || "Virtual School"}
           </div>
         </SheetContent>

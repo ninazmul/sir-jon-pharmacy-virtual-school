@@ -7,11 +7,7 @@ import Link from "next/link";
 import { CourseLink } from "./CourseLink";
 import CountdownTimer from "./CountdownTimer";
 
-function Courses({
-  courses,
-}: {
-  courses?: ICourseSafe[];
-}) {
+function Courses({ courses }: { courses?: ICourseSafe[] }) {
   return (
     <main className="relative w-full py-12 md:py-20 flex flex-col items-center justify-center text-center px-6 md:px-12">
       {/* Header */}
@@ -21,11 +17,11 @@ function Courses({
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="flex flex-col items-center gap-4"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-sm bg-maroon/10 text-maroon border border-maroon/20">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold shadow-sm bg-primary/10 text-primary border border-primary/20">
           Popular Courses
         </div>
 
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-maroon">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-primary">
           Explore Our Courses
         </h2>
 
@@ -101,8 +97,8 @@ function Courses({
                     <span
                       className="text-xs font-semibold px-2 py-1 rounded-full"
                       style={{
-                        backgroundColor: `maroon20`,
-                        color: `maroon`,
+                        backgroundColor: `primary20`,
+                        color: `primary`,
                       }}
                     >
                       {course.certification}
