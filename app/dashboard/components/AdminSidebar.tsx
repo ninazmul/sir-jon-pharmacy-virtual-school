@@ -56,33 +56,9 @@ const sidebarItems = [
     roles: ["admin", "moderator"],
   },
   {
-    title: "Notices",
-    url: "/dashboard/notices",
-    icon: Megaphone, // announcements = loudspeaker
-    roles: ["admin"],
-  },
-  {
-    title: "Success Stories",
-    url: "/dashboard/success-stories",
-    icon: Award, // achievement = stronger signal
-    roles: ["admin"],
-  },
-  {
     title: "Gallery",
     url: "/dashboard/gallery",
     icon: ImageIcon, // cleaner & modern
-    roles: ["admin"],
-  },
-  {
-    title: "Trainers Applications",
-    url: "/dashboard/trainers",
-    icon: UserPlus, // onboarding / application intent
-    roles: ["admin"],
-  },
-  {
-    title: "Complain Applications",
-    url: "/dashboard/complains",
-    icon: MessageCircle, // message icon / application intent
     roles: ["admin"],
   },
   {
