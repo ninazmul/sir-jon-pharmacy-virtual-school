@@ -99,14 +99,18 @@ export default function ContactContent({
             <div className="space-y-6 text-gray-700 dark:text-gray-300">
               {settings?.email && (
                 <div className="flex items-start gap-4">
+                  {/* Icon */}
                   <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
                     <Mail size={20} className="text-primary" />
                   </div>
-                  <div>
+
+                  {/* Email Content */}
+                  <div className="min-w-0 flex-1">
                     <p className="text-sm text-gray-500">Email</p>
                     <a
                       href={`mailto:${settings.email}`}
-                      className="font-medium hover:underline break-words"
+                      className="font-medium hover:underline break-words truncate block"
+                      title={settings.email} // shows full email on hover
                     >
                       {settings.email}
                     </a>

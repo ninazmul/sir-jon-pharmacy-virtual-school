@@ -61,7 +61,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           {titleParts.map((part, i) => (
             <motion.span
               key={i}
-              className="block space-y-4"
+              className="block mb-4"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.12 * i }}

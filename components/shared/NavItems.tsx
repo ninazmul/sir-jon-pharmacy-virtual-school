@@ -21,6 +21,7 @@ const NavItems = ({ onItemSelected }: NavItemsProps) => {
       : { label: "All Courses", route: "/courses" };
 
     return [
+      { label: "Home", route: "/" },
       dynamicLink,
       { label: "About Us", route: "/about" },
       { label: "Contact Us", route: "/contact" },
@@ -41,11 +42,11 @@ const NavItems = ({ onItemSelected }: NavItemsProps) => {
               prefetch={true}
               onClick={onItemSelected}
               className={`
-                block w-full lg:w-auto px-4 py-2 rounded transition-colors
+                block w-full lg:w-auto px-4 py-2 rounded-md transition-all duration-200
                 ${
                   isActive
-                    ? "bg-primary text-white lg:bg-transparent lg:text-white border-b-2 font-semibold"
-                    : "text-primary lg:text-white hover:border-b-2 hover:bg-primary/10"
+                    ? "backdrop-blur-md bg-primary lg:bg-white/30 border border-white/20 shadow-sm text-white font-semibold"
+                    : "text-primary lg:text-white hover:backdrop-blur-md hover:bg-primary lg:hover:bg-white/30 hover:border hover:border-white/20 hover:shadow-sm"
                 }
               `}
             >
