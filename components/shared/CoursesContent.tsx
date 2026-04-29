@@ -13,7 +13,7 @@ function Courses({
   courses?: ICourseSafe[];
 }) {
   return (
-    <main className="relative w-full py-12 md:py-20 flex flex-col items-center justify-center text-center px-6 md:px-12 bg-gray-100">
+    <main className="relative w-full py-12 md:py-20 flex flex-col items-center justify-center text-center px-6 md:px-12">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

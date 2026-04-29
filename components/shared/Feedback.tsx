@@ -23,7 +23,7 @@ function Feedback({ setting }: { setting: ISettingSafe | null }) {
   return (
     <section
       aria-label="Student testimonials and statistics"
-      className="w-full py-12 md:py-20 px-6 md:px-12 bg-gray-50"
+      className="w-full py-12 md:py-20 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

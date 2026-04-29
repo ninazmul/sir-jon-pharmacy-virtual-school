@@ -20,10 +20,10 @@ export default function Home({
     <main>
       <Popup setting={setting} />
       <Hero setting={setting} courses={courses} />
-      <LMSFeatures setting={setting} />
       <section id="courses">
         <CoursesContent courses={courses} />
       </section>
+      <LMSFeatures setting={setting} />
       <Feedback setting={setting} />
       <FAQ setting={setting} />
     </main>
