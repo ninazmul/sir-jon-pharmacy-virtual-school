@@ -58,7 +58,9 @@ export async function getCourses(options: {
     // Decide query based on status
     const query = options.status === "active" ? { isActive: true } : {};
 
-    const courses = await Course.find(query).lean<ICourse[]>();
+    const courses = await Course.find(query)
+      .sort({ createdAt: -1 })
+      .lean<ICourse[]>();
 
     let filtered = courses;
 
