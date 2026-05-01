@@ -34,18 +34,18 @@ export async function generateMetadata({
       "Certification",
     ],
     alternates: {
-      canonical: `https://octal.edu.bd/courses/${course._id}`,
+      canonical: `https://nrb-visible-school.vercel.app/courses/${course._id}`,
     },
     openGraph: {
       title: `${course.title} | NRB visible School`,
       description: course.description.replace(/<[^>]+>/g, "").slice(0, 200),
-      url: `https://octal.edu.bd/courses/${course._id}`,
+      url: `https://nrb-visible-school.vercel.app/courses/${course._id}`,
       siteName: "NRB visible School",
       images: [
         {
           url:
             course.photo ||
-            "https://octal.edu.bd/assets/images/placeholder.png",
+            "https://nrb-visible-school.vercel.app/assets/images/placeholder.png",
           width: 1200,
           height: 630,
           alt: course.title,

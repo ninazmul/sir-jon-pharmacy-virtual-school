@@ -65,10 +65,10 @@ export default function MaintenancePage() {
         >
           Need help? Contact us at{" "}
           <a
-            href="mailto:info@octal.edu.bd"
+            href="mailto:info@nrb-visible-school.vercel.app"
             className="text-blue-600 underline"
           >
-            info@octal.edu.bd
+            info@nrb-visible-school.vercel.app
           </a>
         </motion.p>
       </motion.div>

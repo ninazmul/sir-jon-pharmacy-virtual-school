@@ -16,17 +16,17 @@ export async function generateMetadata(): Promise<Metadata> {
       "BTEB",
     ],
     alternates: {
-      canonical: "https://octal.edu.bd/about",
+      canonical: "https://nrb-visible-school.vercel.app/about",
     },
     openGraph: {
       title: "About Us | NRB visible School",
       description:
         "Learn more about our mission, mentors, and how we help students succeed.",
-      url: "https://octal.edu.bd/about",
+      url: "https://nrb-visible-school.vercel.app/about",
       siteName: "NRB visible School",
       images: [
         {
-          url: "https://octal.edu.bd/assets/images/placeholder.png",
+          url: "https://nrb-visible-school.vercel.app/assets/images/placeholder.png",
           width: 1200,
           height: 630,
           alt: "About NRB visible School",

@@ -29,24 +29,24 @@ export const metadata: Metadata = {
     "Certification",
     "NRB visible School",
   ],
-  metadataBase: new URL("https://octal.edu.bd"),
+  metadataBase: new URL("https://nrb-visible-school.vercel.app"),
   icons: {
     icon: "./favicon.ico",
     shortcut: "./favicon.ico",
     apple: "/assets/images/placeholder.png",
   },
   alternates: {
-    canonical: "https://octal.edu.bd/",
+    canonical: "https://nrb-visible-school.vercel.app/",
   },
   openGraph: {
     title: "NRB visible School | NSDA & BTEB Authorized Assessment Institute",
     description:
       "NRB visible School empowers learners with accredited training programs and certifications under NSDA & BTEB authorization.",
-    url: "https://octal.edu.bd/",
+    url: "https://nrb-visible-school.vercel.app/",
     siteName: "NRB visible School",
     images: [
       {
-        url: "https://octal.edu.bd/assets/images/placeholder.png",
+        url: "https://nrb-visible-school.vercel.app/assets/images/placeholder.png",
         width: 1200,
         height: 630,
         alt: "NRB visible School",
