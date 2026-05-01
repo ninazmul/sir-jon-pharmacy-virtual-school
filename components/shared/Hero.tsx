@@ -53,7 +53,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
                      text-white font-semibold shadow-sm mb-6"
         >
           <GraduationCap size={18} />
-          Welcome to our virtual school!
+          Welcome to NRB Virtual School!
         </motion.div>
 
         {/* Title */}
