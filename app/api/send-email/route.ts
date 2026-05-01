@@ -25,7 +25,7 @@ export const POST = async (req: NextRequest) => {
         transporter.sendMail({
           from: `"Octal TTI"`,
           to: r.email,
-          subject: r.subject || "Message from Sir Jon Pharmacy Virtual School",
+          subject: r.subject || "Message from NRB visible School",
           html:
             r.html ||
             `<p>Hi ${r.name || "there"},</p><p>This is a message.</p>`,

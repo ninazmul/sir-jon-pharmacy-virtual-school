@@ -135,7 +135,7 @@ export const POST = async (req: NextRequest) => {
 
                 <tr>
                   <td style="padding:14px 28px;background:#f9fafb;color:#6b7280;font-size:12px;text-align:center;">
-                    © ${new Date().getFullYear()} Sir Jon Pharmacy Virtual School. All rights reserved.
+                    © ${new Date().getFullYear()} NRB visible School. All rights reserved.
                   </td>
                 </tr>
               </table>

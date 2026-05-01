@@ -65,7 +65,7 @@ export async function sendRegistrationSuccessEmail({
           </div>
 
           <div style="padding:10px;text-align:center;font-size:12px;color:#777;">
-            © ${new Date().getFullYear()} Sir Jon Pharmacy Virtual School
+            © ${new Date().getFullYear()} NRB visible School
           </div>
 
         </div>

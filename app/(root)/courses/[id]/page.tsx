@@ -16,17 +16,17 @@ export async function generateMetadata({
 
   if (!course) {
     return {
-      title: "Course Not Found | Sir Jon Pharmacy Virtual School",
+      title: "Course Not Found | NRB visible School",
       description: "The requested course could not be found.",
     };
   }
 
   return {
-    title: `${course.title} | Sir Jon Pharmacy Virtual School`,
+    title: `${course.title} | NRB visible School`,
     description: course.description.replace(/<[^>]+>/g, "").slice(0, 160),
     keywords: [
       course.title,
-      "Sir Jon Pharmacy Virtual School",
+      "NRB visible School",
       "NSDA",
       "BTEB",
       "Technical Education",
@@ -37,10 +37,10 @@ export async function generateMetadata({
       canonical: `https://octal.edu.bd/courses/${course._id}`,
     },
     openGraph: {
-      title: `${course.title} | Sir Jon Pharmacy Virtual School`,
+      title: `${course.title} | NRB visible School`,
       description: course.description.replace(/<[^>]+>/g, "").slice(0, 200),
       url: `https://octal.edu.bd/courses/${course._id}`,
-      siteName: "Sir Jon Pharmacy Virtual School",
+      siteName: "NRB visible School",
       images: [
         {
           url:
@@ -55,7 +55,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${course.title} | Sir Jon Pharmacy Virtual School`,
+      title: `${course.title} | NRB visible School`,
       description: course.description.replace(/<[^>]+>/g, "").slice(0, 200),
       images: [course.photo || "/assets/images/placeholder.png"],
     },

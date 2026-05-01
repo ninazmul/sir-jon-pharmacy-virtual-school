@@ -88,7 +88,7 @@ export default function PoliciesContent({
           </h1>
           <p className="mt-3 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Everything you need to know about our terms, privacy practices, and
-            policies at Sir Jon Pharmacy Virtual School.
+            policies at NRB visible School.
           </p>
         </motion.header>
 

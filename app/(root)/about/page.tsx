@@ -4,11 +4,11 @@ import AboutContent from "@/components/shared/AboutContent";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "About Us | Sir Jon Pharmacy Virtual School",
+    title: "About Us | NRB visible School",
     description:
       "Learn more about our mission, mentors, and how we help students succeed.",
     keywords: [
-      "About Sir Jon Pharmacy Virtual School",
+      "About NRB visible School",
       "Mission",
       "Mentors",
       "Student Success",
@@ -19,24 +19,24 @@ export async function generateMetadata(): Promise<Metadata> {
       canonical: "https://octal.edu.bd/about",
     },
     openGraph: {
-      title: "About Us | Sir Jon Pharmacy Virtual School",
+      title: "About Us | NRB visible School",
       description:
         "Learn more about our mission, mentors, and how we help students succeed.",
       url: "https://octal.edu.bd/about",
-      siteName: "Sir Jon Pharmacy Virtual School",
+      siteName: "NRB visible School",
       images: [
         {
           url: "https://octal.edu.bd/assets/images/placeholder.png",
           width: 1200,
           height: 630,
-          alt: "About Sir Jon Pharmacy Virtual School",
+          alt: "About NRB visible School",
         },
       ],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "About Us | Sir Jon Pharmacy Virtual School",
+      title: "About Us | NRB visible School",
       description:
         "Learn more about our mission, mentors, and how we help students succeed.",
       images: "/assets/images/placeholder.png",

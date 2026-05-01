@@ -59,9 +59,9 @@ export default function Header({ openSearch }: HeaderProps) {
       <div className="bg-white border-b border-gray-200">
         <Link
           href="/"
-          className="max-w-7xl mx-auto flex items-center gap-4 px-6 py-3"
+          className="max-w-7xl mx-auto flex items-center gap-2 px-6 py-3"
         >
-          <div className="relative w-12 h-12 rounded-md overflow-hidden">
+          <div className="relative w-10 h-10 rounded-md overflow-hidden">
             <Image
               src={settings?.logo || "/assets/images/logo.png"}
               fill
@@ -70,7 +70,7 @@ export default function Header({ openSearch }: HeaderProps) {
               priority
             />
           </div>
-          <span className="text-lg md:text-3xl font-bold tracking-wide text-primary">
+          <span className="text-xl md:text-3xl font-bold tracking-wide text-primary">
             {settings?.name || "Virtual School"}
           </span>
         </Link>
@@ -78,7 +78,7 @@ export default function Header({ openSearch }: HeaderProps) {
 
       {/* Bottom Layer: Navigation, Search, Auth */}
       <div className="bg-primary text-white">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 px-6 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 px-6 py-2">
           {/* Search */}
           <div className="hidden md:flex flex-grow max-w-md">
             <button

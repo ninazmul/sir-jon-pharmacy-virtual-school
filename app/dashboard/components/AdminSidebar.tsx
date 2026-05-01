@@ -107,7 +107,7 @@ const AdminSidebar = ({ role }: { role?: string }) => {
                 />
               </div>
               <span className="text-lg font-bold text-primary">
-                {"SJPV School"}
+                {"NRBV School"}
               </span>
             </Link>
           </SidebarGroupLabel>
