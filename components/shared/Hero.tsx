@@ -8,14 +8,28 @@ import { GraduationCap, BookOpen, Globe, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
 function Hero({ setting }: { setting: ISettingSafe | null }) {
+  // Static fallback data
+  const fallback = {
+    name: "NRB Virtual School",
+    hero: {
+      title: "Shaping Tomorrow’s Leaders, With Flexible Online Programs!",
+      description:
+        "Modern online learning designed for Canada. Accessible programs, accredited standards, and student success.",
+      image: "/assets/images/hero-bg.png",
+    },
+    phoneNumber: "+1 (416) 43‑4040‬",
+  };
+
+  const safeSetting = setting || fallback;
+
   const titleParts = useMemo(() => {
     return (
-      setting?.hero?.title?.split(/[.,]/).filter(Boolean) || [
-        "Learn from anywhere",
-        "Canadian accredited online programs",
+      safeSetting.hero?.title?.split(/[.,]/).filter(Boolean) || [
+        "Shaping Tomorrow’s Leaders",
+        "With Flexible Online Programs!",
       ]
     );
-  }, [setting?.hero?.title]);
+  }, [safeSetting.hero?.title]);
 
   return (
     <section
@@ -24,18 +38,14 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
     >
       {/* Background image */}
       <Image
-        src={setting?.hero?.image || "/assets/images/hero-bg.jpg"}
-        alt={
-          setting?.name
-            ? `${setting.name} background`
-            : "Virtual school background"
-        }
+        src={safeSetting.hero?.image || fallback.hero.image}
+        alt={`${safeSetting.name} background`}
         fill
         className="object-cover"
         priority
       />
 
-      {/* Black overlay for stronger contrast */}
+      {/* Black overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
       {/* Brand gradient overlay */}
@@ -43,7 +53,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
 
       {/* Centered content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 flex flex-col items-center text-center">
-        {/* Badge with glassmorphism */}
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +63,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
                      text-white font-semibold shadow-sm mb-6"
         >
           <GraduationCap size={18} />
-          Welcome to NRB Virtual School!
+          Welcome to {safeSetting.name}!
         </motion.div>
 
         {/* Title */}
@@ -77,7 +87,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           ))}
         </h1>
 
-        {/* Subtitle / description */}
+        {/* Description */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -90,7 +100,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           }}
         />
 
-        {/* CTAs with glass effect */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -108,21 +118,15 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           </Link>
         </motion.div>
 
-        {/* Quick features / trust row with glass cards */}
+        {/* Features */}
         <motion.ul
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl"
         >
-          <li
-            className="flex items-start gap-3 rounded-lg p-4 
-                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
-          >
-            <div
-              className="flex items-center justify-center w-10 h-10 rounded-full 
-                            bg-white/20 backdrop-blur-sm text-white px-3"
-            >
+          <li className="flex items-start gap-3 rounded-lg p-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white px-3">
               <CheckCircle size={18} />
             </div>
             <div className="text-left">
@@ -135,14 +139,8 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
             </div>
           </li>
 
-          <li
-            className="flex items-start gap-3 rounded-lg p-4 
-                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
-          >
-            <div
-              className="flex items-center justify-center w-10 h-10 rounded-full 
-                            bg-white/20 backdrop-blur-sm text-white px-3"
-            >
+          <li className="flex items-start gap-3 rounded-lg p-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white px-3">
               <Globe size={18} />
             </div>
             <div className="text-left">
@@ -155,14 +153,8 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
             </div>
           </li>
 
-          <li
-            className="flex items-start gap-3 rounded-lg p-4 
-                         bg-white/10 backdrop-blur-md border border-white/20 shadow-lg"
-          >
-            <div
-              className="flex items-center justify-center w-10 h-10 rounded-full 
-                            bg-white/20 backdrop-blur-sm text-white px-3"
-            >
+          <li className="flex items-start gap-3 rounded-lg p-4 bg-white/10 backdrop-blur-md border border-white/20 shadow-lg">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white px-3">
               <GraduationCap size={18} />
             </div>
             <div className="text-left">
@@ -176,7 +168,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           </li>
         </motion.ul>
 
-        {/* Small contact / trust line */}
+        {/* Contact */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -184,9 +176,7 @@ function Hero({ setting }: { setting: ISettingSafe | null }) {
           className="mt-8 text-sm text-white/80"
         >
           <span className="font-medium">Questions?</span> Call us:{" "}
-          <span className="font-semibold">
-            {setting?.phoneNumber || "1-800-000-0000"}
-          </span>
+          <span className="font-semibold">{safeSetting.phoneNumber}</span>
         </motion.div>
       </div>
     </section>
