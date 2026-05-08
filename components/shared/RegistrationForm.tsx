@@ -36,6 +36,7 @@ const registrationFormSchema = z.object({
   institution: z.string().min(1, "Institution is required"),
   address: z.string().min(1, "Address is required"),
   photo: z.string().min(1, "Photo is required"),
+  idProof: z.string().min(1, "ID proof is required"),
   paymentAmount: z.number(), // new field
 });
 
@@ -65,6 +66,7 @@ export default function RegistrationForm({
       institution: "",
       address: "",
       photo: "",
+      idProof: "",
       paymentAmount: course.discountPrice ?? course.price, // auto-fill
     },
   });
@@ -311,6 +313,30 @@ export default function RegistrationForm({
           render={({ field }) => (
             <FormItem>
               <FormLabel>Passport Size Photo</FormLabel>
+              <FormControl>
+                <FileUploader
+                  imageUrl={field.value}
+                  setFiles={() => {}}
+                  onFieldChange={async (_blobUrl, files) => {
+                    if (files?.length) {
+                      const uploaded = await startUpload(files);
+                      if (uploaded?.[0]) field.onChange(uploaded[0].url);
+                    }
+                  }}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        {/* ID Proof */}
+        <FormField
+          control={form.control}
+          name="idProof"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>ID Proof</FormLabel>
               <FormControl>
                 <FileUploader
                   imageUrl={field.value}

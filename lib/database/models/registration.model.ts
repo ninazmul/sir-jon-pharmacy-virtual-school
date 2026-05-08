@@ -17,6 +17,7 @@ export interface IRegistration extends Document {
   institution?: string;
   address: string;
   photo?: string;
+  idProof?: string;
 
   // Course Reference
   course: Types.ObjectId;
@@ -58,6 +59,7 @@ const RegistrationSchema = new Schema<IRegistration>(
     institution: { type: String, trim: true },
     address: { type: String, required: true, trim: true },
     photo: { type: String },
+    idProof: { type: String },
 
     course: { type: Schema.Types.ObjectId, ref: "Course", required: true },
 

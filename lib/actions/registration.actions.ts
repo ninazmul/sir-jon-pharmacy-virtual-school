@@ -24,6 +24,7 @@ export type SerializedRegistration = {
   institution: string | null;
   address: string | null;
   photo: string | null;
+  idProof: string | null;
   course: {
     _id: string;
   };
@@ -51,6 +52,7 @@ export type RegistrationParams = {
   institution?: string;
   address: string;
   photo?: string;
+  idProof?: string;
   courseId: string; // reference to Course
 
   // New management fields
@@ -126,6 +128,7 @@ function serializeRegistration(
     institution: toStringOrNull(raw["institution"]),
     address: toStringOrNull(raw["address"]),
     photo: toStringOrNull(raw["photo"]),
+    idProof: toStringOrNull(raw["idProof"]),
     course: serializeCourse(raw["course"]),
     registrationNumber: toStringOrNull(raw["registrationNumber"]),
     status: toStringOrNull(raw["status"]),
@@ -198,6 +201,7 @@ function buildValidatedUpdate(
     "institution",
     "address",
     "photo",
+    "idProof",
   ] as const;
 
   editableFields.forEach((key) => {
@@ -242,6 +246,7 @@ export const createPendingRegistration = async (
       institution: data.institution,
       address: data.address,
       photo: data.photo,
+      idProof: data.idProof,
       course: course._id,
       status: data.status ?? "Pending",
       certificateStatus: data.certificateStatus ?? "Not Certified",
