@@ -3,7 +3,7 @@
 
 import { auth } from "@clerk/nextjs/server";
 import { getUserEmailById } from "@/lib/actions/user.actions";
-import { isAdmin } from "@/lib/actions/admin.actions";
+import { getAdminRole, isAdmin } from "@/lib/actions/admin.actions";
 import { redirect } from "next/navigation";
 import {
   getRegistrations,
@@ -57,6 +57,7 @@ const Page = async () => {
   const userId = sessionClaims?.userId as string;
   const email = await getUserEmailById(userId);
   const adminStatus = await isAdmin(email);
+  const role = await getAdminRole(email);
 
   if (!adminStatus) {
     redirect("/dashboard");
@@ -79,7 +80,7 @@ const Page = async () => {
       </section>
 
       <div className="wrapper my-8">
-        <RegistrationTable registrations={registrations} />
+        <RegistrationTable registrations={registrations} adminRole={role} />
       </div>
     </>
   );

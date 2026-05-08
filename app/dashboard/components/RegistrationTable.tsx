@@ -1,6 +1,6 @@
 "use client";
 
-import React, { JSX, useCallback, useEffect, useMemo, useState } from "react";
+import { JSX, useCallback, useEffect, useMemo, useState } from "react";
 import {
   Table,
   TableBody,
@@ -31,6 +31,7 @@ import {
 import { getCourseById } from "@/lib/actions/course.actions";
 import Link from "next/link";
 import { RichTextEditor } from "@/components/shared/RichTextEditor";
+import IdProofCell from "@/components/shared/IdProofCell";
 
 export type RegistrationItem = {
   _id: string;
@@ -45,6 +46,7 @@ export type RegistrationItem = {
   institution?: string;
   address?: string;
   photo?: string;
+  idProof?: string;
   course?: { _id: string } | string;
   registrationNumber?: string;
   status?: string;
@@ -139,7 +141,13 @@ const STATUS_STYLES: Record<
   Closed: { text: "text-gray-700", bg: "bg-gray-200", icon: <span>❌</span> },
 };
 
-export const RegistrationTable: React.FC<Props> = ({ registrations }) => {
+export const RegistrationTable = ({
+  registrations,
+  adminRole,
+}: {
+  registrations: RegistrationItem[];
+  adminRole?: string | null;
+}) => {
   const [list, setList] = useState<RegistrationItem[]>(registrations);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
@@ -512,6 +520,14 @@ export const RegistrationTable: React.FC<Props> = ({ registrations }) => {
               <TableCell className="text-sm text-muted-foreground truncate max-w-[200px]">
                 {r.email ?? "—"}
               </TableCell>
+
+              {adminRole === "Admin" && (
+                <IdProofCell
+                  idProof={r.idProof}
+                  englishName={r.englishName}
+                  adminRole={adminRole}
+                />
+              )}
 
               {/* Course */}
               <TableCell className="text-sm">
