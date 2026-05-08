@@ -133,15 +133,28 @@ export const getCourseById = async (
 
 // -------------------- SEARCH --------------------
 export const searchCourses = async (query: string): Promise<ICourseSafe[]> => {
-  if (!query.trim()) return [];
+  // 1. Handle empty queries immediately
+  if (!query || !query.trim()) return [];
 
   try {
     await connectToDatabase();
-    const regex = new RegExp(query, "i");
+
+    // 2. Escape special characters in the query to prevent Regex errors
+    const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const regex = new RegExp(escapedQuery, "i");
 
     const courses = await Course.find({
-      isActive: true, // only search active courses
-      title: regex,
+      // 3. Search in multiple fields (Title and Category) for better results
+      $and: [
+        { isActive: true }, // Ensure we only show live courses to users
+        {
+          $or: [
+            { title: regex },
+            { category: regex },
+            { sku: regex }, // Optional: allow searching by SKU
+          ],
+        },
+      ],
     })
       .limit(10)
       .select(
@@ -149,6 +162,7 @@ export const searchCourses = async (query: string): Promise<ICourseSafe[]> => {
       )
       .lean<ICourse[]>();
 
+    // 4. Return sanitized results or empty array
     return courses ? sanitizeCourses(courses) : [];
   } catch (error) {
     handleError(error);
